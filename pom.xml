@@ -14,7 +14,6 @@
     </properties>
 
     <dependencies>
-        <!-- JavaFX Libraries -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -28,18 +27,9 @@
     </dependencies>
 
     <build>
+        <!-- Forces the output to be named app.jar -->
+        <finalName>app</finalName> 
         <plugins>
-            <!-- JavaFX Plugin: Used for local 'mvn javafx:run' -->
-            <plugin>
-                <groupId>org.openjfx</groupId>
-                <artifactId>javafx-maven-plugin</artifactId>
-                <version>0.0.8</version>
-                <configuration>
-                    <mainClass>com.niit.app.Main</mainClass>
-                </configuration>
-            </plugin>
-
-            <!-- Shade Plugin: Fixes 'no main manifest attribute' in Render -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -53,19 +43,9 @@
                         <configuration>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.niit.app.Main</mainClass>
+                                    <mainClass>com.niit.app.Launcher</mainClass>
                                 </transformer>
                             </transformers>
-                            <filters>
-                                <filter>
-                                    <artifact>*:*</artifact>
-                                    <excludes>
-                                        <exclude>META-INF/*.SF</exclude>
-                                        <exclude>META-INF/*.DSA</exclude>
-                                        <exclude>META-INF/*.RSA</exclude>
-                                    </excludes>
-                                </filter>
-                            </filters>
                         </configuration>
                     </execution>
                 </executions>
