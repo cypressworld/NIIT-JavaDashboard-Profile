@@ -55,7 +55,7 @@
                         <configuration>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.niit.app.Launcher</mainClass>
+                                    <mainClass>com.niit.app.Main</mainClass>
                                 </transformer>
                             </transformers>
                             <!-- This prevents security errors when running the JAR -->
