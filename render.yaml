@@ -1,0 +1,6 @@
+services:
+- type: web
+name: niit-dashboard
+env: java
+buildCommand: mvn clean package
+startCommand: java -jar target/NIIT_Dashboard_Project-1.0-SNAPSHOT.jar
